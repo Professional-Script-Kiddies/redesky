@@ -48,13 +48,13 @@ local function checkassetversion()
 end
 
 if not (getasset and requestfunc and queueteleport) then
-	print("Vape not supported with your exploit.")
+	print("Redesky isn't  supported with your exploit.")
 	return
 end
 
 if shared.VapeExecuted then
 	print("e")
-	error("Vape Already Injected")
+	error(" Already Injected")
 	return
 else
 	shared.VapeExecuted = true
@@ -64,10 +64,10 @@ if isfolder(customdir:gsub("/", "")) == false then
 	makefolder(customdir:gsub("/", ""))
 end
 if isfolder("vape") == false then
-	makefolder("vape")
+	makefolder("Redesky")
 end
-if not betterisfile("vape/assetsversion.dat") then
-	writefile("vape/assetsversion.dat", "1")
+if not betterisfile("Redesky/assetsversion.dat") then
+	writefile("Redesky/assetsversion.dat", "1")
 end
 if isfolder(customdir.."CustomModules") == false then
 	makefolder(customdir.."CustomModules")
@@ -75,26 +75,26 @@ end
 if isfolder(customdir.."Profiles") == false then
 	makefolder(customdir.."Profiles")
 end
-if not betterisfile("vape/language.dat") then
+if not betterisfile("Redesky/language.dat") then
 	local suc, res = pcall(function() return gethiddenproperty(game:GetService("Players").LocalPlayer, "ReplicatedLocaleId") end)
 	writefile("vape/language.dat", suc and res or "en-us")
 end
 if not pcall(function() return GetURL("translations/"..readfile("vape/language.dat")..".vapetranslation") end) then
-	writefile("vape/language.dat", "en-us")
+	writefile("Redesky/language.dat", "en-us")
 end
 local assetver = checkassetversion()
-if assetver and assetver > readfile("vape/assetsversion.dat") then
+if assetver and assetver > readfile("Redesky/assetsversion.dat") then
 	if shared.VapeDeveloper == nil then
-		if isfolder("vape/assets") then
+		if isfolder("Redesky/assets") then
 			if delfolder then
-				delfolder("vape/assets")
+				delfolder("Redesky/assets")
 			end
 		end
-		writefile("vape/assetsversion.dat", assetver)
+		writefile("Redesky/assetsversion.dat", assetver)
 	end
 end
-if isfolder("vape/assets") == false then
-	makefolder("vape/assets")
+if isfolder("Redesky/assets") == false then
+	makefolder("Redesky/assets")
 end
 
 local GuiLibrary = loadstring(GetURL("NewGuiLibrary.lua"))()
@@ -173,68 +173,68 @@ end)
 local GUI = GuiLibrary.CreateMainWindow()
 local Combat = GuiLibrary.CreateWindow({
 	["Name"] = "Combat", 
-	["Icon"] = "vape/assets/CombatIcon.png", 
+	["Icon"] = "Redesky/assets/CombatIcon.png", 
 	["IconSize"] = 15
 })
 local Blatant = GuiLibrary.CreateWindow({
 	["Name"] = "Blatant", 
-	["Icon"] = "vape/assets/BlatantIcon.png", 
+	["Icon"] = "Redesky/assets/BlatantIcon.png", 
 	["IconSize"] = 16
 })
 local Render = GuiLibrary.CreateWindow({
 	["Name"] = "Render", 
-	["Icon"] = "vape/assets/RenderIcon.png", 
+	["Icon"] = "Redesky/assets/RenderIcon.png", 
 	["IconSize"] = 17
 })
 local Utility = GuiLibrary.CreateWindow({
 	["Name"] = "Utility", 
-	["Icon"] = "vape/assets/UtilityIcon.png", 
+	["Icon"] = "Redesky/assets/UtilityIcon.png", 
 	["IconSize"] = 17
 })
 local World = GuiLibrary.CreateWindow({
 	["Name"] = "World", 
-	["Icon"] = "vape/assets/WorldIcon.png", 
+	["Icon"] = "Redesky/assets/WorldIcon.png", 
 	["IconSize"] = 16
 })
 local Friends = GuiLibrary.CreateWindow2({
 	["Name"] = "Friends", 
-	["Icon"] = "vape/assets/FriendsIcon.png", 
+	["Icon"] = "Redesky/assets/FriendsIcon.png", 
 	["IconSize"] = 17
 })
 local Profiles = GuiLibrary.CreateWindow2({
 	["Name"] = "Profiles", 
-	["Icon"] = "vape/assets/ProfilesIcon.png", 
+	["Icon"] = "Redesky/assets/ProfilesIcon.png", 
 	["IconSize"] = 19
 })
 GUI.CreateDivider()
 GUI.CreateButton({
 	["Name"] = "Combat", 
 	["Function"] = function(callback) Combat.SetVisible(callback) end, 
-	["Icon"] = "vape/assets/CombatIcon.png", 
+	["Icon"] = "Redesky/assets/CombatIcon.png", 
 	["IconSize"] = 15
 })
 GUI.CreateButton({
 	["Name"] = "Blatant", 
 	["Function"] = function(callback) Blatant.SetVisible(callback) end, 
-	["Icon"] = "vape/assets/BlatantIcon.png", 
+	["Icon"] = "Redesky/assets/BlatantIcon.png", 
 	["IconSize"] = 16
 })
 GUI.CreateButton({
 	["Name"] = "Render", 
 	["Function"] = function(callback) Render.SetVisible(callback) end, 
-	["Icon"] = "vape/assets/RenderIcon.png", 
+	["Icon"] = "Redesky/assets/RenderIcon.png", 
 	["IconSize"] = 17
 })
 GUI.CreateButton({
 	["Name"] = "Utility", 
 	["Function"] = function(callback) Utility.SetVisible(callback) end, 
-	["Icon"] = "vape/assets/UtilityIcon.png", 
+	["Icon"] = "Redesky/assets/UtilityIcon.png", 
 	["IconSize"] = 17
 })
 GUI.CreateButton({
 	["Name"] = "World", 
 	["Function"] = function(callback) World.SetVisible(callback) end, 
-	["Icon"] = "vape/assets/WorldIcon.png", 
+	["Icon"] = "Redesky/assets/WorldIcon.png", 
 	["IconSize"] = 16
 })
 GUI.CreateDivider("MISC")
@@ -401,14 +401,14 @@ ProfilesTextList = Profiles.CreateTextList({
 			end
 		end)
 		bindbkg.MouseEnter:connect(function() 
-			bindimg.Image = getcustomassetfunc("vape/assets/PencilIcon.png") 
+			bindimg.Image = getcustomassetfunc("Redesky/assets/PencilIcon.png") 
 			bindimg.Visible = true
 			bindtext.Visible = false
 			bindbkg.Size = UDim2.new(0, 20, 0, 21)
 			bindbkg.Position = UDim2.new(1, -50, 0, 6)
 		end)
 		bindbkg.MouseLeave:connect(function() 
-			bindimg.Image = getcustomassetfunc("vape/assets/KeybindIcon.png")
+			bindimg.Image = getcustomassetfunc("Redesky/assets/KeybindIcon.png")
 			if GuiLibrary["Profiles"][profilename]["Keybind"] ~= "" then
 				bindimg.Visible = false
 				bindtext.Visible = true
@@ -673,7 +673,7 @@ local TextGuiCircleObject = {["CircleList"] = {}}
 --GUI.CreateCustomButton("Text GUI", "vape/assets/TextGUIIcon2.png", UDim2.new(1, -23, 0, 15), function() TextGui.SetVisible(true) end, function() TextGui.SetVisible(false) end, "OptionsButton")
 GUI.CreateCustomToggle({
 	["Name"] = "Text GUI", 
-	["Icon"] = "vape/assets/TextGUIIcon3.png",
+	["Icon"] = "Redesky/assets/TextGUIIcon3.png",
 	["Function"] = function(callback) TextGui.SetVisible(callback) end,
 	["Priority"] = 2
 })	
@@ -693,7 +693,7 @@ onething.BackgroundColor3 = Color3.new(0, 0, 0)
 onething.BorderSizePixel = 0
 onething.BackgroundTransparency = 1
 onething.Visible = false
-onething.Image = getcustomassetfunc(translatedlogo and "vape/translations/"..GuiLibrary["Language"].."/VapeLogo3.png" or "vape/assets/VapeLogo3.png")
+onething.Image = getcustomassetfunc(translatedlogo and "Redesky/translations/"..GuiLibrary["Language"].."/RedeskyLogo3.png" or "Redesky/assets/VapeLogo3.png")
 local onething2 = Instance.new("ImageLabel")
 onething2.Parent = onething
 onething2.Size = UDim2.new(0, 41, 0, 24)
@@ -972,7 +972,7 @@ end
 
 local TargetInfo = GuiLibrary.CreateCustomWindow({
 	["Name"] = "Target Info",
-	["Icon"] = "vape/assets/TargetInfoIcon1.png",
+	["Icon"] = "Redesky/assets/TargetInfoIcon1.png",
 	["IconSize"] = 16
 })
 local TargetInfoDisplayNames = TargetInfo.CreateToggle({
@@ -1084,7 +1084,7 @@ shared.VapeTargetInfo = {
 }
 GUI.CreateCustomToggle({
 	["Name"] = "Target Info", 
-	["Icon"] = "vape/assets/TargetInfoIcon2.png", 
+	["Icon"] = "Redesky/assets/TargetInfoIcon2.png", 
 	["Function"] = function(callback) TargetInfo.SetVisible(callback) end,
 	["Priority"] = 1
 })
